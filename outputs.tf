@@ -1,3 +1,7 @@
+output "servicebus_namespace_disaster_recovery_configs_id" {
+  description = "Map of id values across all servicebus_namespace_disaster_recovery_configs, keyed the same as var.servicebus_namespace_disaster_recovery_configs"
+  value       = { for k, v in azurerm_servicebus_namespace_disaster_recovery_config.servicebus_namespace_disaster_recovery_configs : k => v.id }
+}
 output "servicebus_namespace_disaster_recovery_configs_alias_authorization_rule_id" {
   description = "Map of alias_authorization_rule_id values across all servicebus_namespace_disaster_recovery_configs, keyed the same as var.servicebus_namespace_disaster_recovery_configs"
   value       = { for k, v in azurerm_servicebus_namespace_disaster_recovery_config.servicebus_namespace_disaster_recovery_configs : k => v.alias_authorization_rule_id }
